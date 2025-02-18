@@ -1,0 +1,19 @@
+{
+  "name": "pw_bdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test || true",
+    "test:failed": "cucumber-js -p rerun @rerun.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
+    "ts-node": "^10.9.2"
+  }
+}
