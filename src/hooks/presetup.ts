@@ -20,7 +20,7 @@ Before(async () => {
 
 After(async () => {
   console.log('After each hook');
-  await pagefixture.page.close();
+ // await pagefixture.page.close();
 })
 
 // afterEach(async () => {
@@ -30,6 +30,6 @@ After(async () => {
 // })
 
 AfterAll(async () => {  
-  await context.close();
-  await browser.close();
+  //await context.close();
+  //await browser.close();
 })
