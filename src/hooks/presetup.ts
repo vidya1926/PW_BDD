@@ -12,7 +12,7 @@ let page:Page
 Before(async () => {
   console.log('Before each hook');
 
-    browser=await chromium.launch({headless:false})
+    browser=await chromium.launch({headless:true})
        context=await browser.newContext();
        page=await context.newPage();
         pagefixture.page=page
