@@ -5,26 +5,15 @@ pool:
   vmImage: 'ubuntu-latest'  # Use a Linux-based agent
 
 steps:
-  - task: UseNode@2  # Install Node.js
+  - task: UseNode@1  # Install Node.js
     inputs:
       version: '18.x'
 
   - script: |
-      npm install  # Install project dependencies
-      npx playwright install --with-deps  # Install Playwright browsers
+      npm install  
+      npx playwright install --with-deps  
     displayName: 'Install Dependencies'
 
   - script: |
       npm test
     displayName: 'Run Playwright Tests'
-
-  - task: PublishTestResults@2  # Publish test results
-    inputs:
-      testResultsFiles: 'test-results/*.xml'
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-    condition: always()  # Runs even if tests fail
-
-  - task: PublishBuildArtifacts@1  # Upload Playwright report
-    inputs:
-      pathToPublish: 'playwright-report'
-      artifactName: 'playwright-report'
